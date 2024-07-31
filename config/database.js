@@ -1,5 +1,19 @@
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-module.exports = {
-    mongoURI: 'mongodb+srv://Sai_Reddy:gYSLntFmEhhoMgws@thebrandstore.8opehg1.mongodb.net/ToDoList',
-    JWT_SECRET: 'a0432b1329c394aec2d4db414d0ce37dc7f94ad1cf47e6ef66d4b1844c69cdcd'
-  };
+dotenv.config();
+mongoose.set('strictQuery', true);
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
