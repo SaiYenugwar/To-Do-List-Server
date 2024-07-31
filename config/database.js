@@ -1,0 +1,5 @@
+
+module.exports = {
+    mongoURI: 'mongodb+srv://Sai_Reddy:gYSLntFmEhhoMgws@thebrandstore.8opehg1.mongodb.net/ToDoList',
+    JWT_SECRET: 'a0432b1329c394aec2d4db414d0ce37dc7f94ad1cf47e6ef66d4b1844c69cdcd'
+  };
